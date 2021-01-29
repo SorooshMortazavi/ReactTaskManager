@@ -2,10 +2,14 @@ import React from "react";
 
 export default function Task(props) {
 
-
-  const handleDelete = () => {
-    props.deleteTask(props.title)
+  
+  const handleDeleteTask = () => {
+    props.deleteTask(props.title);
   }  
+
+  const handleEditTask = () => {
+      props.editTask(props.title);
+  }
 
   return (
     <tr className="border">
@@ -13,10 +17,10 @@ export default function Task(props) {
       <td className="border-right">{props.title}</td>
       <td>
         <div className="d-flex justify-content-around">
-          <span className="material-icons text-danger font-weight-bold" onClick={handleDelete}>
+          <span className="material-icons text-danger font-weight-bold" style={{cursor:'pointer'}} onClick={handleDeleteTask}>
             delete
           </span>
-          <span className="material-icons text-success font-weight-bold">
+          <span className="material-icons text-success font-weight-bold" style={{cursor:'pointer'}} onClick={handleEditTask}>
             create
           </span>
         </div>

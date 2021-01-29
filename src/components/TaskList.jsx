@@ -6,7 +6,7 @@ export default function TaskList(props) {
     const taskRender = () => {
        return props.tasks.map((task,index) => {
                 return(
-                    <Task index={index+1} title={task.title} key={index} deleteTask={props.deleteTask}/>
+                    <Task index={index+1} title={task.title} key={index} deleteTask={props.deleteTask} editTask={props.editTask}/>
                 );
          } )
     }
